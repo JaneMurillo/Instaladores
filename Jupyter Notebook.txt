@@ -1,0 +1,30 @@
+Jupyter Notebook
+
+1. Tener instalado python
+2. En el cmd poner 'pip install notebook'
+
+Después de su instalación:
+
+1. En cmd poner 'jupyter notebook'
+2. En 'New' > 'Python3'
+3. Titulo de archivo
+
+Para compilar:
+Presionar Shift + enter
+
+Instalar paquetes
+
+Pandas:
+pip install pandas
+Matplotlib:
+pip install matplotlib
+Seaborn:
+pip install seaborn
+Sklearn:
+pip install sklearn
+Statsmodels:
+pip install statsmodels
+
+En Visual Studio Code
+* Tener instalado Python
+* Tener instalado Jupyter Notebook

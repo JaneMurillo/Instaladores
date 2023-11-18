@@ -1,0 +1,59 @@
+INSTALL POSTGRESS
+
+Link: https://www.postgresql.org/download/
+
+1. Al abrir el instalador, dar click en 'Next' para dejar las opciones por defecto hasta que pida contraseña
+2. Contraseña: root y dar click en Next para la instalación
+3. Cuando empieze el Stack Builder, escoger la opción de 'PostgreSQL x(x64) on port 5432' y Next
+
+4. Luego seleccionar con qué herramientas se quiere complementar PostgreSQL:
+   Add-ons y Database Drivers, seleccionar todo (los de Database Drivers son importantes)
+   En Database Server, seleccionar las versiones de postgres que querramos, yo dejé la 14)
+   Al dar aceptar, te dice cuales se van a descargar junto con la ruta, yo dejé esta C:\Users\patoa\AppData\Roaming
+5. Al empezar a instalar lo anterior, va a pedir al menos 4 veces que se de permiso para la instalación, por los drivers
+6. Luego escoger el lenguaje: Inglés
+
+Configurar Postgres en las variables de entorno
+
+1. Ir a Editar las variables de entorno del sistema
+2. Click en 'Variables de Entorno'
+3. En 'Variables del sistema' dando doble click en 'Path'
+4. Dar click en 'Nuevo' y poner la ruta de donde esta la carpeta bin de postgres: 
+   'C:\Program Files\PostgreSQL\14\bin' 
+   y 
+   'C:\Program Files\PostgreSQL\15\lib'
+5. Click en Aceptar
+6. Si el cmd estaba abierto, cerrarlo y volverlo a abrir
+
+
+ABRIR POSTGRESQL
+
+1. Ya terminado el proceso, buscar la aplicacion SQL Shell (psql)
+2. Al abrirlo dejaremos el Server, Database, Port y Username por defecto, por lo que solo daremos enter en esas opciones
+3. Luego ingresaremos la contraseña que habiamos definido 'root' y damos enter para entrar
+4. Asi se puede interactuar con la BD y ver que se ha instalado bien
+
+PGADMIN
+1. Otra manera de interactuar es abriendo pgAdmin que tiene una interfaz gráfica
+2. Entramos con la contraseña 'root'
+
+3. Abrir Servers > PotgreSQL > Databases > pdlc_database > Schemas > public
+4. Tables > User 
+5. Para ver la información, en la tabla que seleccionemos y ahí dar click derecho 
+6. Seleccionar 'View/Edit Data' y 'All Rows'
+7. Si hay cambios, dar click en el icono de datos (tres rueditas verticalmente)
+
+
+COMANDOS
+
+Crear una base de datos			CREATE DATABASE basededatos;
+Accesar a una base de datos 		\c basededatos;
+Crear tabla 				CREATE TABLE tabla (id serial NOT NULL, modelo character varying, capacidad integer, CONSTRAINT tren_pkey PRIMARY KEY (id) );
+Cómo se creó la tabla 			\d tabla
+Insertar en una tabla 			INSERT INTO "User" (user_fullname,user_email,user_password,user_type) VALUES ('jane','jane.mx','root','1');
+Mostrar los datos de la tabla 	SELECT * FROM tabla;
+Modificar la tabla 			UPDATE tabla SET modelo = 'Honda 0726 Where id = 1;
+Eliminar en la tabla 			DELETE FROM tabla WHERE id = 1;
+
+
+

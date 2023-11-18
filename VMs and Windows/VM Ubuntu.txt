@@ -1,0 +1,41 @@
+>>>>> VM Para Ubuntu <<<<<
+
+Nombre: Ubuntu
+Tipo: Linux
+Versión: Ubuntu (64-bit)
+RAM: 2048
+Crear disco - Disk Image - Tamaño fijo
+Tamaño: 30 GB
+
+Configuración:
+Dar doble click en la máquina para poner el iso o desde config
+
+Idioma
+- Instalar Ubuntu
+Disposición del teclado: Spanish (Latinoamerica)
+Como la pantalla es muy chica, arrastrar la palabra de instalar a la izquierda
+> Click en Continuar
+> Selecctionar solo:
+- Instalación normal
+- Instalar programas de terceros
+> Click en continuar
+> Dejar la opción de borrar disco
+> Click en Instalar ahora
+> Click en continuar
+> Seleccionar Mexico
+> Usuario y contraseña
+> Selecionar 'Iniciar sesión automaticamente'
+> Se instalara y Reiniciar ahora
+> Enter
+
+> Omitir > Siguiente > No enviar info > Siguiente > Hecho
+
+ 
+>>>>>>> Para acomodar la pantalla <<<<<<<
+
+En Configuración, hasta abajo, seleccionar 'Monitores' > Resolución > 1608 x 1050 
+> Aplicar > Mantener cambios
+
+>>>>>>> Para abrir la terminal <<<<<<<
+Ctrl + Alt + T
+Nota: El administrador de tareas se llama Monitor de tareas

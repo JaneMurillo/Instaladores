@@ -1,0 +1,9 @@
+Disable OneDrive from Windows
+
+1. Settings
+2. Apps
+3. Installed Apps
+4. Search 'Microsoft OneDrive'
+5. Clic on thre dots and Unintall
+6. Clic con yes to unistall
+7. Restart

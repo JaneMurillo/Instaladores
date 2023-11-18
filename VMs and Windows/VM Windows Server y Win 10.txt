@@ -1,0 +1,77 @@
+VM Microsoft Windows Server
+
+Instalador ISO del link: https://www.microsoft.com/es-es/evalcenter/download-windows-server-2019 
+
+Creación de la VM Windows Server
+
+Nombre: "Server 1"
+Type: Microsoft Windows
+Version: Other Windows (64 bits)
+
+1. RAM: 4096 MB
+2. Crear un disco virtual ahora
+3. Para escoger:
+- VDI, VirtualBox Disk Image, escogemos esta
+- VHD, Virtual Hard Disk
+- VMDK, Virtual Machine Disk
+4. Tamaño fijo, porque si no puede crecer exponencialmente
+5. Para Windows Server se recomienda 50GB
+6. Crear máquina (tarda)
+Ahora, antes de correr la máquina, ir a Configuración:
+1. En Sistema, seleccionar 2 procesadores en 'Procesador'
+2. En Almacenamiento, seleccionar 'Vacio' y dar click en el icono de DVD dando click en 'Seleccionar un disco óptico virtual'
+2.1. En este paso, dar en 'Añadir' para seleccionar el disco
+3. En Red, dar click a 'Adaptador puente'
+4. Aceptar la configuración
+
+Instalación de Windows Server en la VM
+
+1. Iniciar la máquina virtual
+2. Configurar formato de fecha y hora
+3. Click en Instalar ahora
+4. Esto nos llevará a escoger el tipo de sistema operativo, donde seleccionaremos ‘Windows Server 2019 Standard (Experiencia de escritorio)’.
+5. Al continuar, aparecerán los Términos de licencia y varias aplicables, donde daremos click a la opción de ‘Acepto los términos de licencia’ y continuaremos dando click en ‘Siguiente’.
+6. Para continuar, nos preguntará el tipo de la instalación que se va a querer:
+-	Actualización o Personalizada, por lo que seleccionaremos Personalizada 
+	para la instalación del Windows desde 0.
+-	Esto nos llevará a otro apartado que pregunta dónde queremos instalar Windows, 
+	a lo que seleccionaremos donde dice ‘Espacio sin asignar en la unidad 0’.
+7. De esta manera, empezará la instalación de Windows Server, y aparecerán en pantalla las acciones 
+	que se están ejecutando
+8. Solo hasta que concluyan las tareas, se reiniciará la máquina virtual
+9. Una vez instalado el Windows, nos pedirá una contraseña, con los requisitos del link: 
+https://docs.microsoft.com/es-es/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements
+
+Referencias: 
+https://diarioprogramador.com/instalar-windows-server-2019-en-virtualbox/ 
+
+
+Windows 10
+
+Para descargar el ISO: https://vivanticpro.com/descargar-imagen-iso-windows/
+
+Nombre: Windows 10
+Type: Microsoft Windows
+Version: Windows 10 (64 bits)
+
+1. RAM: 4096 MB (Minimo 2 como recomendación)
+2. Crear un disco virtual ahora
+3. Para escoger:
+- VDI, VirtualBox Disk Image, escogemos esta
+- VHD, Virtual Hard Disk
+- VMDK, Virtual Machine Disk
+4. Tamaño fijo, porque si no puede crecer exponencialmente
+5. Para Windows Server se recomienda 50GB, aunque se puede 25, 30
+6. Crear máquina (tarda)
+Ahora, antes de correr la máquina, ir a Configuración:
+1. En Sistema, seleccionar 2 procesadores en 'Procesador'
+2. Luego en Display o Pantalla, de Memoria de video poner 128MB
+3. En almacenamiento, seleccionar 'Vacio' y dar click en el icono de DVD dando click en 'Seleccionar un disco óptico virtual'
+3.1. En este paso, dar en 'Añadir' para seleccionar el disco
+4. Aceptar la configuración
+
+Para la instalación de Windows 10 en la VM:
+https://www.youtube.com/watch?v=jH1Fz0yXSuE
+
+Referencias:
+https://www.youtube.com/watch?v=jH1Fz0yXSuE

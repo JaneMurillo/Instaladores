@@ -1,0 +1,30 @@
+DOWNLOAD WINDOWS 1O ISO
+
+1. Entrar al enlace https://www.microsoft.com/es-mx/software-download/windows10 para descargar la herramienta de descarga
+2. En la herramienta de descarga:
+- Aceptar el acuerdo de confidencialidad
+- Seleccionar 'Create installation media (USB flash drive....)
+- Select idiom
+- Select ISO file
+
+DOWNLOAD WINDOWS 11
+
+
+INSTALL WINDOWS 1O and WINDOWS 11
+
+1. Download Rufus since https://rufus.ie/en/ (last update)
+2. In Rufus app:
+	1. Select device: USB Name
+	2. Boot selection: ISO file
+	3. Partition schema: MB
+	4. Status: Start
+3. Clic in Close
+4. Eject USB
+5. Turn on the device and press F2 or F10, select the new device
+5.1. If is a PC, clic on F8 to select the new device and start booting
+6. It will start with Windows
+	1. Choose and idiom and keyboard language
+	2. Select the Partition to install Windows
+	3. Wait until the install is complete
+7. Eject the USB
+8. Configure Windows

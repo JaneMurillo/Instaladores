@@ -1,0 +1,15 @@
+Instalar Go
+-	Buscar Golang en Google
+-	Ir a golang.org
+-	Dar click en botón de descargar Go y escoger Windows
+-	Instalador:
+-	Aceptar, aceptar licencias, ver ruta, aceptar
+-	En documentos crear la carpeta Go para el directorio, donde esté la carpeta ‘bin’, ‘pkg’, ‘src’ (donde estarán los proyectos y código fuente) 
+-	En la carpeta ‘src’ con la carpeta ‘github.com’ y crear también la carpeta que lleve el nombre de nuestra cuenta de github
+-	Dentro es donde se trabajará
+-	Ahora configurar las variables de entorno:
+-	En variables del sistema debería de haberse creado un GOROOT, como no hay, se agrega como nueva variable  ‘GOROOT’ y pegamos el directorio de ‘C:\Go’
+-	En variables del usuario, creamos una nueva variable llamada ‘GOPATH’ (no importa que ya haya otra) y pegamos la ruta de documentos ‘C:\Users\x\Documents\Go’ y aceptamos
+-	Ahora en las variable de entorno, modificamos la variable Path pegando el directorio ‘C:\Go\bin’y el ‘C:\Users\x\Documents\Go\bin’. Aceptar > aceptar > aceptar
+-	En VS, ahora instalamos la librería Go para programar
+-	Al crear un archivo, en la terminar se preguntará si queremos instalar algunas librerías y damos install all

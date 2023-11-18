@@ -1,0 +1,57 @@
+VM MacOS Big Sur
+
+Instalar Big Sur: https://www.youtube.com/watch?v=FkdEpUqp3Cg y https://osxdaily.com/2021/07/15/how-install-macos-virtualbox-windows/
+
+Nombre: "macOS Big Sur"
+1. RAM: 4096 MB
+2. Crear un disco virtual ahora
+3. Para escoger:
+- Machine disk, se usa en el articulo y es la que tarda menos
+- Hard disk, se usa en el video pero tarda mucho
+- Disk image no funciona
+4. Tamaño fijo, porque si no puede crecer exponencialmente
+5. En el articulo le ponen 100GB y en el video 150GB (Recomiendo 104.25GB)
+6. Crear máquina (tarda)
+Ahora, antes de correr la máquina, ir a Configuración:
+1. En Sistema, seleccionar 2 procesadores en 'Procesador'
+2. Luego en Display o Pantalla, de Memoria de video poner 115MB
+3. En almacenamiento, seleccionar 'Vacio' y dar click en el icono de DVD dando click en 'Seleccionar un disco óptico virtual'
+3.1. En este paso, dar en 'Añadir' para seleccionar el disco
+4. Aceptar la configuración
+
+5. Pegar la configuración de 'Code for VirtualBox':
+5.1. Abrir cmd o Command Prompt como administrador 
+5.2. Pegar la configuración
+
+cd "C:\Program Files\Oracle\VirtualBox\"
+
+
+VBoxManage.exe modifyvm "macOS Big Sur" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+Si no funciona la máquina por problemas de usuario, poner:
+VBoxManage setextradata "macOS Big Sur" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
+
+6. Iniciar la máquina
+
+En la configuración interna:
+* English
+* Select 'Disk Utility' > Select the main Virtual Disk "VBOX HARDDISK Media"  > Select 'Erase' boton > In Name: 'macOS HDD' and click on 'Erase' boton > Click on Done > Click on 'Disk Utility' (it's on the top of the VM on the left) and 'Quit Disk Utility'
+* Select on 'Install macOS Big Sur' > Click continue > Click continue > Agree Terms and Conditions > Agree
+* Select the instalation disk > Continue > It'll take 30 mins
+* United States > Continue > Continue > Not now > Continue > Not now > Set up Later > Skip > Agree > Agree > Write full name and password > Continue > Continue > Continue > Close
+* Right click on 'Install macOS Big Sur' and select 'Eject'
+
+Antes de correr la máquina virtual, hay que correr unas lineas de comando
+1. Ir al archivo 'Code for VirtualBox.txt' ese ya tiene el nombre de la máquina:
+2. Abrir CMD como administrador y pegar los comandos
+
+
+3. Ahora ya se puede correr la máquina virtua
+
+Para el installer de Logic de versiones anteriores a la 11.5
+
+https://drive.google.com/file/d/1ZStrh7w1Bd9QYNJn1l8a0wvIX-if_r4_/view?usp=sharing

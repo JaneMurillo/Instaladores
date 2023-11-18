@@ -1,0 +1,25 @@
+Intalaciones
+
+Python:
+
+Para obtener el ejecutable:
+0.1. Ver si desde cmd esta Python escribiendo 'python --version'
+0.2. Ir a la página https://www.python.org/downloads/windows/ y dar click en Download
+
+1. El ejecutable abrirlo como administrador
+2. Seleccionar: \/ Install laucher... \/ Add Python to PATH
+3. Dar click en la opción 'Customize Instalation'
+4. Dejamos la selección por default y continuamos
+5. Cambiamos la ruta de instalación a 'C:\Python310' y damos a continuar
+6. Dar click en Reiniciar más tarde y close
+7. Abrir cmd y verificar si ya esta Python con 'python --version' o --vs
+8. Si queremos ingresar a python, escribimos 'python' para entrar
+
+9. Para configurar la ruta vamos a 'Variables de entorno del sistema'
+10. En Variables del sistema, seleccionamos Path y damos click en editar
+11. Vamos a donde esta instalado Python, y pegamos la ruta como nueva var de ent
+12. Las dos rutas a pegar: 'C:\Python310' y 'C:\Python310\Scripts'
+13. Click en Aceptar -> Aceptar -> Aceptar
+14. Comprobar en cmd con 'python --version'
+
+Página web de consulta:  https://tutorial.djangogirls.org/es/python_installation/

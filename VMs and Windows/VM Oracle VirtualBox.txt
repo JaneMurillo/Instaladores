@@ -1,0 +1,12 @@
+Oracle VM VirtualBox
+
+1. Entrar en el siguiente link, para la descarga de Oracle VM VirtualBox:
+https://www.virtualbox.org/wiki/Downloads
+2. Dar click en el apartado escrito en azul que dice 'Windows hosts’, eso comenzará la descarga del archivo .exe.
+3. Al descargarse, abrimos el instalador y va a preguntar si permitimos que haga cambios en el dispositivo, 
+a lo que daremos click en ‘Yes’.
+4. Luego nos manda a Custom SetUp, para la localización de la instalación de la aplicación, 
+pero de preferencia la dejaremos como esta por defecto, por lo que daremos amos en Next.
+5. En la siguiente vista va a aparecer lo que se va a instalar junto con la seleccionar de qué accesos se van a quedar,
+ por lo que también lo dejaremos por defecto y damos click en Next.
+6. Por último, se va a instalar, y al terminar la instalación, daremos click en Finish.

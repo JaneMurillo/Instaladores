@@ -1,0 +1,63 @@
+Descargar la aplicación que se encuentra en la rama backend-tests
+Link: https://github.com/ProyectosModularesCUCEI/Rufo/tree/backend-tests
+
+npm install router-dom
+
+Seguir el tutorial que se encuentra en el README de la carpeta API
+
+Insertar un usuario
+
+Para abrir la aplicación, si ya se tiene todo lo anterior previamente
+
+1. Entrar en el cmd y poner los siguientes comandos:
+psql -d postgres -U rufo
+\c pdlc_database;
+
+2. En Visual, abrir dos terminales
+   Para una: cd backend-tests
+             npm run start
+
+   Para otra: npm start
+
+
+Tablas de Rufo:
+- User
+- Pet
+- Donative
+- Events
+- Blog
+- Candidate
+- Adoption_Request
+- Photos
+- Health_Card
+
+
+Cómo se insertaron las tablas:
+CREATE TABLE "User"( user_id SERIAL PRIMARY KEY, user_fullname VARCHAR(50) NOT NULL, user_email VARCHAR(50) NOT NULL, user_password VARCHAR(50) NOT NULL, user_lastconnection date, user_type int NOT NULL);
+
+CREATE TABLE "Pet"(pet_id SERIAL PRIMARY KEY, pet_name VARCHAR(50) NOT NULL, pet_breed VARCHAR(20) NOT NULL, pet_size VARCHAR(15) NOT NULL, pet_personality VARCHAR(100) NOT NULL, pet_color VARCHAR(50) NOT NULL, pet_age VARCHAR(50) NOT NULL, pet_sex varchar(1) NOT NULL, pet_specie VARCHAR(100) NOT NULL, pet_user_id int NOT NULL, CONSTRAINT FK_user_pet FOREIGN KEY(pet_user_id) REFERENCES "User"(user_id));
+
+CREATE TABLE "Donative"( donative_id SERIAL PRIMARY KEY, donative_date DATE NOT NULL, donative_name VARCHAR(100), donative_email VARCHAR(60) NOT NULL, donative_type INT, donative_amount VARCHAR(50) NOT NULL);
+
+CREATE TABLE "Events"(event_id SERIAL PRIMARY KEY, event_date DATE NOT NULL, event_title VARCHAR(50) NOT NULL, event_text VARCHAR(200) NOT NULL, event_pic BYTEA, event_contact VARCHAR(50), event_user_id INT NOT NULL, CONSTRAINT FK_user_events FOREIGN KEY(event_user_id) REFERENCES "User"(user_id));
+
+CREATE TABLE "Blog"(blog_id SERIAL PRIMARY KEY, blog_date DATE NOT NULL, blog_title VARCHAR(50) NOT NULL, blog_text VARCHAR(2000) NOT NULL, blog_pic BYTEA, blog_comment VARCHAR(2000) NOT NULL, blog_user_id INT NOT NULL, CONSTRAINT FK_user_blog FOREIGN KEY(blog_user_id) REFERENCES "User"(user_id));
+
+CREATE TABLE "Candidate"(cand_id SERIAL PRIMARY KEY, cand_date DATE NOT NULL, cand_age INT NOT NULL, cand_address VARCHAR(40) NOT NULL, cand_ocupation VARCHAR(30) NOT NULL, cand_question1 VARCHAR(200) NOT NULL, cand_question2 VARCHAR(150) NOT NULL, cand_question3 VARCHAR(100) NOT NULL,cand_question4 VARCHAR(100), cand_question5 VARCHAR(100) NOT NULL,cand_question6 VARCHAR(100) NOT NULL, cand_question7 VARCHAR(100) NOT NULL, cand_question8 VARCHAR(100) NOT NULL, cand_question9 VARCHAR(100) NOT NULL, cand_question10 VARCHAR(100) NOT NULL, cand_question11 VARCHAR(100) NOT NULL, cand_question12 VARCHAR(100) NOT NULL, cand_question13 VARCHAR(100) NOT NULL, cand_question14 VARCHAR(100) NOT NULL, cand_question15 VARCHAR(100) NOT NULL,cand_question16 VARCHAR(100) NOT NULL,cand_question17 VARCHAR(100) NOT NULL, cand_user_id INT NOT NULL, CONSTRAINT FK_user_cand FOREIGN KEY(cand_user_id) REFERENCES "User"(user_id));
+
+CREATE TABLE "Adoption_Request"(adopReq_id SERIAL PRIMARY KEY, adopReq_data DATE NOT NULL, adopReq_state BOOL, adopReq_visible BOOL, adopReq_cand_id INT NOT NULL, adopReq_pet_id INT NOT NULL, CONSTRAINT FK_cand_adop FOREIGN KEY(adopReq_cand_id) REFERENCES "Candidate"(cand_id),CONSTRAINT FK_pet_adop FOREIGN KEY(adopReq_pet_id) REFERENCES "Pet"(pet_id));
+
+CREATE TABLE "Photos"(photo_id SERIAL PRIMARY KEY, photo_confidential BOOLEAN NOT NULL, photo_post BOOLEAN NOT NULL, photo_user_type INT NOT NULL, photo_pet_id INT NOT NULL, photo_health_id INT NOT NULL, CONSTRAINT FK_user_photo FOREIGN KEY(photo_user_type) REFERENCES "User"(user_id),CONSTRAINT FK_pet_photo FOREIGN KEY(photo_pet_id) REFERENCES "Pet"(pet_id));
+
+CREATE TABLE "Health_Card"(health_id SERIAL PRIMARY KEY, health_date DATE NOT NULL, health_state VARCHAR(20) NOT NULL, health_condition VARCHAR(50) NOT NULL, health_notes VARCHAR(200) NOT NULL, health_pet_id INT NOT NULL, health_photo_id INT, CONSTRAINT FK_pet_health FOREIGN KEY(health_pet_id) REFERENCES "Pet"(pet_id), CONSTRAINT FK_photo_health FOREIGN KEY(health_photo_id) REFERENCES "Photos"(photo_id));
+
+ALTER TABLE "Photos" ADD CONSTRAINT FK_health_photo FOREIGN KEY(photo_health_id) REFERENCES "Health_Card"(health_id);
+
+
+Cómo se insertaron los datos
+INSERT INTO "User"(user_fullname, user_email, user_password, user_type) VALUES('user1','user1@gmail.com','root',1);
+INSERT INTO "Pet"(pet_name, pet_breed, pet_size, pet_personality, pet_color, pet_age, pet_sex, pet_specie,pet_user_id) VALUES ('Pinky', 'Chihuahua', 'S', 'Faldero.Obediente', 'Beige', 3,'F', 'Perro', 2);
+INSERT INTO "Pet"(pet_name, pet_breed, pet_size, pet_personality, pet_color, pet_age, pet_sex, pet_specie,pet_user_id) VALUES ('Trotsky', 'San Bernardo', 'G', 'Acompañante.Obediente', 'Negro', 7,'M', 'Perro', 2);
+INSERT INTO "Pet"(pet_name, pet_breed, pet_size, pet_personality, pet_color, pet_age, pet_sex, pet_specie,pet_user_id) VALUES ('Cheems', 'Shiba Inu', 'G', 'Cuidador.Obediente', 'Beige', '1','M', 'Perro', 2);
+INSERT INTO "Pet"(pet_name, pet_breed, pet_size, pet_personality, pet_color, pet_age, pet_sex, pet_specie,pet_user_id) VALUES ('Chispitas', 'Corgi', 'S', 'Cuidador.Faldero', 'Beige', '1','M', 'Perro', 2);
+

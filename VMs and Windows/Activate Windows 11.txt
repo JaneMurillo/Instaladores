@@ -1,0 +1,16 @@
+ACTIVAR WINDOWS 11 
+URL: https://www.youtube.com/watch?v=n6qmzVkktYo
+
+1. Abrir cmd como administrador
+2. Poner los siguientes comandos 
+Link de comandos: https://tecnored.org/activar-windows-11-desde-cmd-gratis-%F0%9F%94%91/#comandos
+Paso 1:
+slmgr.vbs -upk
+Paso 2:
+slmgr /ipk COLOCAR-SERIE-SEGÚN-VERSIÓN
+3. La serie se puede ver desde el siguiente link
+Link: https://tecnored.org/activar-windows-11-desde-cmd-gratis-%F0%9F%94%91/#claves
+Pago 3:
+slmgr /skms kms.digiboy.ir
+Paso 4:
+slmgr /ato

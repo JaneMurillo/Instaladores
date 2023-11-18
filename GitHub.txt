@@ -1,0 +1,67 @@
+| Descargar aplicación de GitHub |
+Dos opciones:
+1. Entrar en este url https://git-scm.com/download/win
+2. Buscar donde en letras azules dice 'Click here to download' y se va a descargar
+3. Abrir el archivo 
+4. Click en Terminos: Next, Ubicación: Next, A instalar: Next, Start Folder: Next
+5. Editor: Nano: Next
+6. Apartir de aquí, todo Next, como marca en los siguientes 2 pasos: 
+6. Name Branches: Next, 3rt-party: Next, bundled OpenSSH: Next, Default Checkout Win: Next, 
+7. Default MinTTY: Next, Default: Next, Credential: Next, Default Enable: Next, Default Experimental: Next, Launch: GitBash
+8. Por ultimo, dejar el Launch seleccionado
+
+Link: https://www.youtube.com/watch?v=HGg4a9bFNIk
+O este con letras: https://www.youtube.com/watch?v=dbEqN7EY-Mg
+
+| Para sacar un código de GitHub
+Existen dos opciones: 
+1. Copiar código
+2. En la carpeta deseada dar click derecho para abrir git bash here
+
+1. Poner 'git clone url'
+ 
+| Subir repositorio |
+- Se puede subir desde VS code
+- Se puede subir creando el repo en git y enlazando:
+
+1. Crear repo en Git con el mismo nombre de la carpeta que vamos a subir
+2. En la carpeta vamos a hacer 'Git Bash here'
+3. Escribir los siguientes comandos:
+- git init
+- git add .
+- git commit -m "Service mesh - istio"
+Hasta este punto estan los archivos en local
+- git branch -M main
+Con ese comando definimos que se suba a la rama principal
+- git remote add origin linkdelrepositorio
+- git push -u origin main
+Indica el push
+
+| Subir cambios al repo |
+Escribir los comandos:
+- git config --global user.name username
+- git config --global user.email email
+- git remote add linkdelrepositorio
+- git add .
+- git commit -m "Service mesh - istio"
+- git push
+
+| Descargar |
+Escribir los comandos:
+- git config --global user.name username
+- git config --global user.email email
+- git clone linkdelrepositorio
+
+https://github.com/JaneMurillo/proyectoLaragonvel.git
+
+| Tags |
+Escribir en la consola
+- git tag TagName o git tag TagName NumCommit
+- git push --tags
+
+| Configurar el usuario |
+Escribir los comandos:
+- git config --global user.name username
+- git config --global user.email email
+
+GitHub Pages https://www.youtube.com/watch?v=c5YVvdZ0-a0

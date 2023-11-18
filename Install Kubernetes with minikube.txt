@@ -1,0 +1,23 @@
+KUBERNETES
+
+Para que funcione correctamente, se sugiere descargar kubectl dashboard, como se muestra en el video:
+Video: https://www.youtube.com/watch?v=vBMryTczFMI
+
+1. Escribir el comando 'kubectl version'
+   Este debe mostrar información del cliente y de la versión del servidor
+
+2. Luego escribir el comando 'kubectl get nodes'
+3. Comando 'kubectl describe nodes' para saber que kubernetes esta instalado bien
+
+
+0. Si en alguno de estos pasos sale 'Unable to connect to the server: EOF:
+0.1. Poner el comando 'minikube status' para ver si funciona minikube, si no
+0.2. minikube start
+Stack overflow: https://stackoverflow.com/questions/48928330/how-to-fix-issue-of-unable-to-connect-to-the-server-eof-kubernetes-kubectl
+
+Si sale que 'kubectl' no se reconoce en el cmd, intentar este otro video: https://www.youtube.com/watch?v=UE1UqcaSYpM
+Propone: 
+1. Descargar kubect desde el sitio oficial de Kubernetes: https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-on-windows-using-chocolatey-or-scoop
+2. En ese link, buscar "1. Download the latest release v1.23.0." o la vs actual
+3. Luego, en Disco local(C:) agregar una nueva carpeta llamada 'kube' y pegarle el archivo descargado 'kubectl.exe'
+4. En 'Variables de entorno del sistema' en 'Variables del sistema' dar doble click en PATH y añardir la nueva: 'C:\kube'

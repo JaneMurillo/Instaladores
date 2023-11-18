@@ -1,0 +1,53 @@
+VM Kali Linux
+
+Video propio de referencia: https://drive.google.com/file/d/1ynB3B-C4jV6VWaEY8raT5uxWGRkxvCsI/view
+
+Nota: Varia la imagen de Kali Linux que se tenga en el dispositivo, 
+en este caso yo tenia la img iso: 'kali-linux-2021.4a-installer-amd64'
+
+Nombre: Kali Linux
+RAM: 1024MG (recomendado)
+Tipo: Linux
+Versión: Linux 2.6 (64bit)
+> Crear máquina ahora > Virtual Disk Img (VDI)
+> Tamaño fijo 
+Tamaño: De 12 a 50GB
+
+Configuración
+Sistema
+> 2 CPUs
+Almacenamiento
+> Click en disco Vacio > click en disco > Unidad óptica virtual
+> Añadir > Ingresar archivo iso > Seleccionar 
+
+Iniciar Máquina Virtual
+Seleccionar el modo de instalación
+> Instalación Gráfica
+Seleccionar idioma: spanish, ubicación, teclado: latinoamericano
+Nombre de la máquina: kalilenovoi
+Nombre del dominio: lenovoi.com
+Nombre del usuario: lenovoi
+Contraseña 1 y 2: 12345
+Zona horaria: Central
+
+Tipo de particionado: Manual
+> Seleccionar donde se llevará a cabo la partición: SCSI3
+¿Crear una nueva tabla de particiones? > Si
+> Seleccionar donde dice 'ESPACIO LIBRE'
+Cómo usar este espacio libre > Seleccionar Crear una partición nueva
+Dejar el tamaño de la partición y continuar
+Tipo de partición: Primaria
+> Buscar hasta abajo donde dice 'Definir la partición'
+> Click en 'Finalizar la partición'
+Pregunta si queremos regresar al menú de particiones > No
+¿Desea guardar los cambios en los discos? > Si
+> Esperar 5-15 mins
+
+En selección de programas, preguntará si queremos instalar las opciones recomendadas > Si
+> Esperar 5-15mins
+
+En este caso, como Kali Linux es el único SO de la máquina, 
+Pregunta si queremos instalar el cargador de arranaque (GRUP) > si
+Dispositivo donde se instalará > Seleccionar la ruta que aparece: /dev/etc...
+
+Una vez hecho esto, mostrará que se ha instalado correctamente y comenzara a correr la VM

@@ -1,0 +1,40 @@
+EMQX
+
+1. Entrar a la página emqx.com/en
+2. Dirigirse al apartado gratis y publico, con este link:
+https://www.emqx.com/en/mqtt/public-mqtt5-broker o buscar la opción
+'Publick mqtt5 broker'
+3. Ir y dar click al botón de 'Learn more...' en el apartado de Online MQTT Client
+4. Dar click en el botón de 'Visit MQTT WebSocket Toolkit'
+5. Click en New conection
+Name: ESP8266
+Esto ya te da el id, host, port y path
+Dejamos lo demas asi
+6. Nos subscribimos con New Subscription
+Topic: Salida/01
+QoS: 0
+Color: a escoger
+Click en confirm
+7. En la parte inferior elegir la opción de 'Plaintext'
+En donde dice Topico, poner 'Entrada/01' y dentro del texto que tenia JSON:
+'0' o '1'
+8. Dar click en botón para enviar y vemos si se envió el mensaje
+
+
+Usar ESP8266
+
+1. Primeramente ir al repositorio oficial del ESP8266: https://github.com/esp8266/arduino 
+2. Ahi se encuentra el link oficial que le dice a Arduino qué descargar para el uso de NODEMCU8366: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+3. En el IDE de Arduino, abrir 'Archivo>Preferencias' y pegar el link en 'Gestor de URLs Adicionales de Tarjetas: '
+4. Dar click en Ok
+
+Ahora si,
+5. Ir a 'Herramientas>Placa:Arduino/Genuino Uno>Gestor de tarjetas'
+6. En el campo de busqueda poner 'esp8266' y al encontrarlo, instalar dicha librería
+7. Cerrar el Gestor de tarjetas y abrirlo nuevamente
+8. Podemos observar ahora la placa NODEMCU8266, de manera que ahora se debe de dar click en 'Generic ESP8266 Module' (Es la 01) para seleccionarla
+Pd. También existe la ESP8285 (Es la 12)
+9. En herramientas checar los siguientes atributos:
+   Flash Size: Se debe de observar si es 01 o 12, como se mencionó anteriormente
+   Upload Speed: Es el nivel de carga del programa, esto depende del valor y carga del puerto y del usb
+10. En caso de no poder, orientarse mediante el siguiente url de Youtube, link video: https://www.youtube.com/watch?v=0g7sazWXfEI

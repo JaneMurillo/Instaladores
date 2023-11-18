@@ -1,0 +1,13 @@
+R A I N M E T E R
+
+To install Rainmeter, you have to do the following steps:
+
+1. Download Rainmeter from https://www.rainmeter.net/
+2. Choose a skin from the page https://visualskins.com
+3. As a sugestion, install Mond and MonterreyRainmeter
+   - Mond: https://visualskins.com/skin/mond
+     Clic on 'Download'
+   - Monterrey Rainmeter: https://github.com/creewick/MontereyRainmeter/releases
+     Clic on the link 'Monterey_1.0.0.rmskin'
+
+

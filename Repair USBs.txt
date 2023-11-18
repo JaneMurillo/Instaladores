@@ -1,0 +1,9 @@
+Reparar USBs
+
+Problema: El archivo esta dañado o es ilegible
+
+Link de apoyo: https://www.youtube.com/watch?v=txNiCFewsbM
+
+1. Abrir cmd
+2. Escribir el comando 'chkdsk h: /f' donde h es el acceso de la usb a reparar
+3. Esperar

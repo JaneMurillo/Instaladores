@@ -1,0 +1,205 @@
+Tener instalado: 
+- Arduino: Arduino - Software https://www.arduino.cc/en/software
+- ExpressJS: npm install express --save
+- Npx
+
+Código para comprobar que funciona Arduino prendiendo un led:
+1. Conectar Arduino y la lap
+2. Conectar led en puerto 13 con GND
+int led = 13;
+void setup(){
+	pinMode(led, OUTPUT);
+}
+void loop(){
+	digitalWrite(led, HIGH);
+}
+3. Verificar y comprobar código
+4. Herramientas > Puerto para configurar el puerto
+
+Advertencia: Instalar todo lo necesario para que funcione Arduino en el equipo.
+
+Link del documento web tutorial:
+https://medium.com/tech-talent-oaxaca/integraci%C3%B3n-de-arduino-con-un-api-en-express-c36ca7c0478b
+
+Integración de Arduino con un API en Express
+
+Johnny-Five
+Es la plataforma para internet de las cosas y robótica escrita en Javascript. Lanzada por Bocoup en 2012, Johnny-Five es mantenida por una comunidad apasionado de desarrolladores y ingenieros de software.
+La utilzaremos en conjunto con Express para desarrollar correctamente nuestra API.
+
+Instalación de Johnny-Five e inicialización del proyecto
+Es importante que tener instalado ExpressJS, 
+se recomienda instalar nvm para así tener flexibilidad a la hora de usar la versión de express que más nos convenga. 
+
+1. Vamos a utilizar la versión 8.12.0 de nodejs, esto con el objetivo de mantener una versión actualizada y estable, por eso la elección de este.
+Con nvm vamos a asegurarnos de elegirla correctamente:
+$ nvm install 8.12.0
+
+2. Creamos nuestro proyecto que se llamará api-led e instalamos las dependencias necesarias para que funcione.
+$ mkdir api-led
+$ cd api-led
+$ npm init # Este paso iniciará nuestro proyecto
+... # Aquí vamos a configurarlo, es bastante sencillo hacerlo
+... # Así es que lo dejo como ejercicio
+$ npm install --save express johnny-five cors
+
+3. Ahora vamos a conectar nuestro Arduino a nuestro equipo y ver si funciona.
+   Vamos a corregir un error que puede ocurrir al momento de querer integrar nuestro Arduino con nodejs, independientemente de la plataforma que tengamos.
+   Vamos a abrir la aplicación que trae por default Arduino e instalar las librerías necesarias.
+   Vamos a navegar en el menú > Sketch > Include Library > Manage Library
+   Y vamos a buscar la librería Firmata e instalarla.
+   Eso corregirá cualquier error que aparezca en nuestro código, es importante que nuestros puertos seriales tengan los permisos necesarios.
+4. Implementación de API: En este caso colocaremos el LED en el pin 13.
+5. Vamos a conectar el LED y probar nuestro hola mundo con Johnny-Five, escribiendo un script que permitirá hacer un blink de 3 segundos.
+
+// hola-mundo.js
+const five = require('johnny-five');
+const board = new five.Board();
+board.on('ready', () => {
+  const led = new five.Led(13);
+  led.blink(3000);
+});
+6. Corremos el script en la consola ejecuntando el siguiente comando:
+$ node hola-mundo.js
+7. Integración con Express: instalado express y cors, ahora usaremos esas librerías. 
+   Creamos el archivo index.js dentro de la raíz de nuestro proyecto y añadimos lo siguiente:
+
+const five = require('johnny-five');
+const express = require('express');
+const cors = require('cors');
+const board = new five.Board();
+8. Ahora vamos a iniciar nuestro Arduino, mucho antes de crear el servidor, es importante que se haga de esta forma.
+
+// Arriba se encuentra las dependencias
+...
+board.on('ready', () => {
+  ... aquí se encontrará el código de nuestro servidor en express 
+});
+9. Ahora, iniciamos el Pin que queremos usar y probamos que nuestra API funcione correctamente.
+
+let led = new five.Led(13);
+const app = express();
+app.use(cors());
+app.get('/', (req, res) => res.send('Ready!'));
+app.listen(8080, () => console.log('Server on: localhost:8080');
+
+10. Utilzaremos switch para poder tener respuestas adecuadas a las peticiones, quedará de la siguiente forma:
+
+...
+  app.get('/led', (req, res) => {
+    switch(req.query.power) {
+    case 'on':
+      led.on();
+      res.status(200).send('Led prendido');
+      break;
+    case 'off':
+      led.off();
+      res.status(200).send('Led apagado');
+      break;
+    default:
+      led.on();
+      res.status(200).send('Led prendido');
+      break;
+    }
+  });
+11. Tenemos que enviar las siguientes peticiones:
+
+// para prender el LED
+GET http://localhost:8080/led?power=on
+// para apagar el LED
+GET http://localhost:8080/led?power=off
+
+
+Link tutorial: https://medium.com/tech-talent-oaxaca/integraci%C3%B3n-de-arduino-con-reactjs-a-trav%C3%A9s-de-un-api-en-expressjs-99c755bf3db3
+Link del repo: https://github.com/onimenotsuki/arduino-react-express
+
+1. Verificar node
+$ node --version
+
+2. Instalar create-react-app
+$ npm i -g create-react-app
+
+3. Para poder crear el proyecto
+$ npx create-react-app arduino-react-express
+$ cd arduino-react-express
+$ npm start 
+4. Ahora tendremos una App basada en React corriendo en localhost:3000
+5. Implementación: abriremos el archivo src/App.js y lo modificaremos de la siguiente forma.
+
+import React, { Component } from 'react';
+import './App.css';
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>
+            Aquí editaremos el código
+          </p>
+        </header>
+      </div>
+    );
+  }
+}
+export default App;
+6. Para consumir nuestra API primero tenemos que correr nuestro servidor en express que realizamos en el tutorial pasado, recordemos que estará en: localhost:8080
+7. En este caso utilizaremos fetch para hacer la petición.
+   Vamos a intentar hacer algo con el state para controlar el encendido y apagado de nuestro LED
+
+constructor() {
+  super();
+  this.state = { isPower: false };
+}
+8. Ahora añadiremos una función que nos permita hacer la petición de acuerdo al estado de nuestro LED con la constante action podremos hacer la petición correctamente, utilizando el endpoint de nuestra API: localhost:8080/led?power=${action}
+
+togglePower() {
+  const action = !this.state.isPower ? 'on' : 'off';
+  fetch(`http://localhost:8080/led?power=${action}`)
+    .then(_res => {
+      console.log(_res);
+      this.setState(prevState => ({
+        isPower: !prevState.isPower,
+      }));
+    });
+}
+9. Ahora modificaremos nuestro método render.
+
+render() {
+  return (
+    <div className="App">
+       <header className="App-header">
+        <p
+          onClick={this.togglePower.bind(this)}
+        >
+          Prender o apagar
+        </p>
+      </header>
+    </div>
+  );
+}
+10. Vamos a optimizar nuestro código:
+
+// En nuestro constructor
+constructor() {
+    super();
+    this.state = { isPower: false };
+    this.togglePower = this.togglePower.bind(this);
+  }
+// En nuestro método render
+render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p
+            onClick={this.togglePower.bind(this)}
+          >
+            {this.state.isPower ? 'Apagar' : 'Encender' } LED
+          </p>
+        </header>
+      </div>
+    );
+  }
+
+
+https://www.youtube.com/watch?v=yxl3D5hjWAs
+ $ npm install johnny-five

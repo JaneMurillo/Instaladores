@@ -1,0 +1,27 @@
+Instalar React y Node JS
+
+1. Instalar NodeJS en su ultima versión, para eso entraremos a su web oficial y descargaremos el instalador más actualizado
+Link: 	https://nodejs.org/es/
+2. Actualizar NPM, el gestor de paquetes de node, para bajarnos las dependencias más actuales:
+Comando:	npm install -g npm@latest
+3. Borrar la cache de NPM:
+Comando:	npm cache clean --force
+4. Instalar Create React App, que es un interprete de consola(CLI) que nos va a permitir instalar React facilmente e incluirá webpack para la compilación y minificación del proyecto, un live reload, una estructura básica para los proyectos de ReactJS, etc, veamos como instalar este paquete:
+Comando:	npm install -g create-react-app
+Ahora ya tenemos instalado «create react app» y ya podemos generar un nuevo proyecto de React.js
+
+
+Crear aplicación de React Js
+1. Para generar un nuevo proyecto de React.js, entraremos al directorio donde queramos generar el proyecto de reactjs 
+2. Primero hay que instalar react app con el comando:
+	npm install create-react-app
+
+3. Después, para crear la aplicación, se pone el comando:
+npx create-react-app nombreapp
+Incluso se puede poner ese comando sin el paso 1 y VS pregunta si lo quieres hacer
+
+Para K8s
+npx create-react-app nombre
+4. Una vez creado el proyecto, para acceder a él, 
+Ejecutar en la terminal el comando:	cd nombre-proyecto
+5. Y el comando:	 npm start
