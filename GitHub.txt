@@ -13,7 +13,7 @@ Dos opciones:
 Link: https://www.youtube.com/watch?v=HGg4a9bFNIk
 O este con letras: https://www.youtube.com/watch?v=dbEqN7EY-Mg
 
-| Para sacar un código de GitHub
+| Para sacar un código de GitHub |
 Existen dos opciones: 
 1. Copiar código
 2. En la carpeta deseada dar click derecho para abrir git bash here

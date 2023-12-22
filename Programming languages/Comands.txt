@@ -1,0 +1,20 @@
+Comands for...
+
+Windows
+
+Ctrl + c 	Copiar 
+Ctrl + v	Pegar
+Ctrl + X	Cortar
+Ctrl + Z	Atras 
+Ctrl + Y	Adelante 
+Windows + E	Archivos
+Windows + I	Configuración
+
+Visual
+
+Alt + Flechas	Mover lineas
+Alt + Select	Mover muchas lineas
+Ctrl + ] }	Comentarios
+Ctrl + k+c	Comentarios
+Ctrl + Shift	> Network web
+Ctrl+Shift+`	Terminal

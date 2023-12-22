@@ -1,0 +1,45 @@
+Installers
+
+Java in Windows:
+
+To obtein the file .exe:
+0.1. Go to the page https://www.oracle.com/mx/java/technologies/downloads/ 
+0.2. Choose a version of JDK (20, 17, ...)
+0.3. On Windows versions, select the .exe file
+0.4. Clic on .exe file and select the location where you want to install java
+0.5. Clic on 'Next' button
+0.6. Open cmd and write 'javac' to check if java was correctly installed
+0.7. If you want to check the version of java, write 'javac --version'
+Link: https://www.youtube.com/watch?v=gVDmUMzpnko
+
+Use Java with...
+
+Notepad
+1. Open a new note
+2. Write the code
+3. Save the note and close it
+4. Change type of file '.txt' to '.java'
+5. Compile with cmd
+
+Visual Studio Code
+1. Open VSC and go to 'Extension' section
+2. Install 'Extension Pack for Java'
+3. Close and open again VSC
+4. In the search section, write '>java' and select 'Create Java Proyect'
+5. In 'src', in App.java we can compile
+More references: https://www.youtube.com/watch?v=RnrVQhUtfZg
+
+Spring Boot
+1. Go to the link 
+2. 
+More references: https://www.youtube.com/watch?v=Hd2bAKyOhng&list=PLCIjncxyvEHbSAhlMhSrMROJtg1s_tlG8&index=2
+
+Compile with...
+
+CMD
+1. Choose the dir
+2. Write 'javac FileName.java'
+
+VSC
+1. Open the terminal
+2. Write 'java .\FileName.java'
